@@ -1,15 +1,18 @@
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const dreamSchema = require('./dreamSchema');
+const dreamscapeSchema = require('./dreamscapeSchema');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
 
   username: String,
   useremail: String,
-  password: String
-  
+  password: String,
+  birthdate: Date,
+  createdposts: [dreamSchema],
+  saveddreamscapes: [dreamscapeSchema]
+
 });
 
-const userModel = mongoose.model('User', userSchema);
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = userSchema;

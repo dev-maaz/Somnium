@@ -1,14 +1,14 @@
 
 const express = require("express");
 const router = express.Router();
-const userControllers = require("../controllers/userControllers")
+const dreamControllers = require("../controllers/dreamControllers")
 
 router
-    .get("/get/:username",userControllers.getUser)
-    .post("/create",userControllers.createUser)
-    .put("/update",userControllers.updateUser)
-    .patch("/edit",userControllers.editUser)
-    .delete("/delete",userControllers.deleteUser)
+    .get("/get/:username",dreamControllers.getDream)
+    .post("/create",dreamControllers.createDream)
+    // .put("/update",dreamControllers.updateUser)
+    // .patch("/edit",dreamControllers.editUser)
+    // .delete("/delete",dreamControllers.deleteUser)
 
 
 // router
